@@ -36,3 +36,8 @@ drwxr-xr-x  2 edwin_d_vinas edwin_d_vinas 4096 Apr 17 22:28 ULAPPH-Cloud-Desktop
 drwxr-xr-x  3 edwin_d_vinas edwin_d_vinas 4096 Mar 25 18:57 ULAPPH-Cloud-Desktop-Shell-Installer
 ```
 
+- After editing the main.go, just go to where your "quick_install_ulapph.sh" script is and excute the installation by one command
+
+```
+./quick_install_ulapph.sh
+```
