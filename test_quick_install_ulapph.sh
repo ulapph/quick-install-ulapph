@@ -1,4 +1,5 @@
 #!/bin/bash
+#A test install script for testing certain installs
 #A script for installing or upgrading multiple ULAPPH sites in one script
 #For each target project ID, execute configure and install
 
@@ -11,9 +12,7 @@
 HOME=/home/ulapph/ulapph
 
 #!!!! EDIT THIS !!!!
-#Google Account 
-#This account is the one with Google Cloud subscription enabled
-#It should also be the owner or deployer for the project IDs
+#Admin Email
 EMAIL=ulapph@gmail.com
 
 #!!!! EDIT (optional) !!!!
@@ -23,25 +22,25 @@ VERBOSITY=debug
 #!!!! EDIT THIS !!!!
 #List ulapph to be deployed or installed
 array=(
-"christine-cunanan" \
-"golang-programming" \
-"ulapph-1" \
-"ulapph-2" \
-"ulapph-3" \
-"ulapph-4" \
+#"christine-cunanan" \
+#"golang-programming" \
+#"ulapph-1" \
+#"ulapph-2" \
+#"ulapph-3" \
+#"ulapph-4" \
 "ulapph-5" \
-"ulapph-cloud-desktop" \
-"ulapph-corporation" \
-"ulapph-demo" \
-"ulapph-infostream" \
-"ulapph-installer" \
-"ulapph-methods" \
-"ulapph-portal" \
-"ulapph-public-1" \
-"ulapph-sites" \
-"ulapph-ves" \
-"ulapph-videoke" \
-"ulapph-work" \
+#"ulapph-cloud-desktop" \
+#"ulapph-corporation" \
+#"ulapph-demo" \
+#"ulapph-infostream" \
+#"ulapph-installer" \
+#"ulapph-methods" \
+#"ulapph-portal" \
+#"ulapph-public-1" \
+#"ulapph-sites" \
+#"ulapph-ves" \
+#"ulapph-videoke" \
+#"ulapph-work" \
 )
 
 #!!!!! STOP EDITS HERE !!!!!!!
@@ -57,21 +56,21 @@ do
 	PROJECT_ID=${array[$ix]}
 	echo "Backing up main.go"
 	cd $HOME/ULAPPH-Cloud-Desktop-1/
-	#cp main.go main.go.backup
-	#cp main.go main.go.dev
+	cp main.go main.go.backup
+	cp main.go main.go.dev
 
 	echo "Configuring project: " $PROJECT_ID
 	cd $HOME/ULAPPH-Cloud-Desktop-Configs/
-	#ulapphctl --config $PROJECT_ID.yaml configure
+	ulapphctl --config $PROJECT_ID.yaml configure
 
 	echo "Preparing project: " $PROJECT_ID
 	cd $HOME/ULAPPH-Cloud-Desktop-1/
-	#mv main2.go main.go
+	mv main2.go main.go
 
 	echo "Installing via gcloud: " $PROJECT_ID
-	#gcloud --project=$PROJECT_ID --account=$EMAIL --verbosity=$VERBOSITY --quiet app deploy app.yaml
+	gcloud --project=$PROJECT_ID --account=$EMAIL --verbosity=$VERBOSITY --quiet app deploy app.yaml
 	echo "Cleaning up project: " $PROJECT_ID
-	#ulapphctl devstart
+	ulapphctl devstart
 	echo '======================================'
 
 done
