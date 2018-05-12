@@ -41,3 +41,23 @@ drwxr-xr-x  3 edwin_d_vinas edwin_d_vinas 4096 Mar 25 18:57 ULAPPH-Cloud-Desktop
 ```
 ./quick_install_ulapph.sh
 ```
+
+- And to further simplify code and deployment
+```
+alias dep='cd ~/ulapph/quick-install-ulapph'
+alias dev='cd ~/ulapph/ULAPPH-Cloud-Desktop-1'
+```
+
+- To code, type "dev"
+```
+dev
+vim main.go
+```
+
+- To deploy changes
+```
+dep
+./quick_install_ulapph.sh
+```
+
+
