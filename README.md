@@ -60,10 +60,9 @@ dep
 ./quick_install_ulapph.sh
 ```
 
-<<<<<<< HEAD
 - Or to deploy to a test server
+```
 dep
 ./test_quick_install_ulapph.sh
-=======
->>>>>>> 16ba1a858bedf0c1229a04742cf16c4e2732fab1
+```
 
