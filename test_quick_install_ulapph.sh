@@ -20,6 +20,14 @@ EMAIL=ulapph@gmail.com
 VERBOSITY=debug
 
 #!!!! EDIT THIS !!!!
+#Directory where source codes are located 
+ULAPPH_SOURCES=ULAPPH-Cloud-Desktop-1
+
+#!!!! EDIT THIS !!!!
+#Directory where YAML configurations are located
+ULAPPH_CONFIGS=ULAPPH-Cloud-Desktop-Configs
+
+#!!!! EDIT THIS !!!!
 #List ulapph to be deployed or installed
 array=(
 #"christine-cunanan" \
@@ -55,16 +63,16 @@ do
 	#----------------
 	PROJECT_ID=${array[$ix]}
 	echo "Backing up main.go"
-	cd $HOME/ULAPPH-Cloud-Desktop-1/
+	cd $HOME/$ULAPPH_SOURCES/
 	cp main.go main.go.backup
 	cp main.go main.go.dev
 
 	echo "Configuring project: " $PROJECT_ID
-	cd $HOME/ULAPPH-Cloud-Desktop-Configs/
+	cd $HOME/$ULAPPH_CONFIGS/
 	ulapphctl --config $PROJECT_ID.yaml configure
 
 	echo "Preparing project: " $PROJECT_ID
-	cd $HOME/ULAPPH-Cloud-Desktop-1/
+	cd $HOME/$ULAPPH_SOURCES/
 	mv main2.go main.go
 
 	echo "Installing via gcloud: " $PROJECT_ID

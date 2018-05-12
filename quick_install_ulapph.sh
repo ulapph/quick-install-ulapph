@@ -26,7 +26,7 @@ ULAPPH_SOURCES=ULAPPH-Cloud-Desktop-1
 
 #!!!! EDIT THIS !!!!
 #Directory where YAML configurations are located
-ULAPPH_SOURCES=ULAPPH-Cloud-Desktop-Configs
+ULAPPH_CONFIGS=ULAPPH-Cloud-Desktop-Configs
 
 #!!!! EDIT THIS !!!!
 #List ulapph to be deployed or installed
@@ -65,21 +65,21 @@ do
 	PROJECT_ID=${array[$ix]}
 	echo "Backing up main.go"
 	cd $HOME/$ULAPPH_SOURCES/
-	#cp main.go main.go.backup
-	#cp main.go main.go.dev
+	cp main.go main.go.backup
+	cp main.go main.go.dev
 
 	echo "Configuring project: " $PROJECT_ID
 	cd $HOME/$ULAPPH_CONFIGS/
-	#ulapphctl --config $PROJECT_ID.yaml configure
+	ulapphctl --config $PROJECT_ID.yaml configure
 
 	echo "Preparing project: " $PROJECT_ID
 	cd $HOME/$ULAPPH_SOURCES/
-	#mv main2.go main.go
+	mv main2.go main.go
 
 	echo "Installing via gcloud: " $PROJECT_ID
-	#gcloud --project=$PROJECT_ID --account=$EMAIL --verbosity=$VERBOSITY --quiet app deploy app.yaml
+	gcloud --project=$PROJECT_ID --account=$EMAIL --verbosity=$VERBOSITY --quiet app deploy app.yaml
 	echo "Cleaning up project: " $PROJECT_ID
-	#ulapphctl devstart
+	ulapphctl devstart
 	echo '======================================'
 
 done
