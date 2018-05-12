@@ -28,12 +28,12 @@ array=(
 #"ulapph-2" \
 #"ulapph-3" \
 #"ulapph-4" \
-"ulapph-5" \
+#"ulapph-5" \
 #"ulapph-cloud-desktop" \
 #"ulapph-corporation" \
 #"ulapph-demo" \
 #"ulapph-infostream" \
-#"ulapph-installer" \
+"ulapph-installer" \
 #"ulapph-methods" \
 #"ulapph-portal" \
 #"ulapph-public-1" \
