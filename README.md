@@ -66,3 +66,25 @@ dep
 ./test_quick_install_ulapph.sh
 ```
 
+
+- To create a new config file
+```
+dep
+ulapph@cloudshell:~/ulapph/quick-install-ulapph$ ./newconfig.sh
+++++++++++++++++++++++++++++++++++++++++
++ ULAPPH Cloud Desktop - New Configuration
+++++++++++++++++++++++++++++++++++++++++
+What is the PROJECT-ID?
+golang-university
+What is the PROJECT-TITLE?
+Golang University
+What is the ADMIN-EMAIL?
+ulapph@gmail.com
+Creating initial config for golang-university - Golang University using ulapph@gmail.com
+Replacing default project id ->  golang-university
+Replacing default project title ->  Golang University
+Replacing default project email ->  ulapph@gmail.com
+~/ulapph/ULAPPH-Cloud-Desktop-Configs/golang-university.yaml
+Done
+```
+
